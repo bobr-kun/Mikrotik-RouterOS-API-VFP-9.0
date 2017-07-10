@@ -102,14 +102,14 @@ FUNCTION Get(pcUrl,cHeaders)
 ENDFUNC
 
 * POST **************************************************************
-* pcUrl - строка типа "HTTP://www.test.test.ru/test.php"
-* cHeaders - строки типа '<»м€>: <значение>'+chr(13)+chr(10)
-* cStr - строка типа ['<»м€ пер.>=<значение пер.>'+'&']+[<»м€ пер. дл€ pcData>]+chr(13)+chr(10)
-* pcData - данные дл€ передачи на сервер в виде строки символов
+* pcUrl - string like "HTTP://www.test.com/test.php"
+* cHeaders - strings lika '<Name>: <value>'+chr(13)+chr(10)
+* cStr - string like ['<VarName.>=<Var value.>'+'&']+[<VarName. for pcData>]+chr(13)+chr(10)
+* pcData - character string with data to pass to the server
 * 
-* ≈сли указан cHeaders, то заголовки передаютс€ перед данными.
-* ≈сли cStr не указан, то передаетс€ сразу pcData и пуста€ строка
-*  тогда предполагаетс€, что pcData уже содержит cStr и блок с данными
+* If cHeaders assgined - headers are send before the data.
+* If cStr is not assigned - pcData is send and an empty string 
+* 	and it supposed pcData contains cStr and datablock already 
 
 FUNCTION Post(pcUrl, cHeaders, cStr, pcData)
   LOCAL lResult, lcB, lcStr, lnCount, lnCnt, lcName, lcValue, lT1, lT2
