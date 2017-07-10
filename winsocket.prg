@@ -81,10 +81,10 @@ FUNCTION Disconnect
 ENDFUNC
 
 * GET *************************************************************
-* pcUrl - строка типа "HTTP://test.test.ru/test.php"
-* cHeaders - строки типа '<»м€>: <значение>'+chr(13)+chr(10)
+* pcUrl - string like "HTTP://www.test.com/test.php"
+* cHeaders - strings lika '<Name>: <value>'+chr(13)+chr(10)
 *
-* ≈сли указан cHeaders, то передаютс€ указанные заголовки
+* If cHeaders assgined - assigned headers are send
 
 FUNCTION Get(pcUrl,cHeaders)
   LOCAL lResult
