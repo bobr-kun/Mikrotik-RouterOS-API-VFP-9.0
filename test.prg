@@ -11,7 +11,10 @@ PROCEDURE test
 		****	write some log info
 		RETURN .F.
 	ENDIF 
-
+	
+	MTikAPI.MTikLogin = 'admin'
+	MTikAPI.MTikPassword = 'admin'
+	
 	IF !MTikAPI.logInMTik()
 		****	write some log info
 		RETURN .F.
