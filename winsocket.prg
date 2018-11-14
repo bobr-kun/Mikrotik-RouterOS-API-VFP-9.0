@@ -193,7 +193,7 @@ ENDFUNC
   ENDFUNC
 
   FUNCTION readSocket
-  #DEFINE READ_SIZE 65536		&&	16384
+  #DEFINE READ_SIZE 65536
     LOCAL cRecv, nRecv, nFlags
     cRecv = Repli(Chr(0), READ_SIZE)
     nFlags = 0
