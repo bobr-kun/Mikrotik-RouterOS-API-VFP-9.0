@@ -65,7 +65,12 @@ FUNCTION Connect
 	RETURN .F.
   ENDIF
     
-  cPort = THIS.num2word(htons(THIS.Port))
+*  cPort = THIS.num2word(htons(THIS.Port)) - as this will not work in win10 and win 8/8.1 probably
+*	so using this hack	BitAnd(htons(8728), 0xffff)
+*	found here: 
+*	https://stackoverflow.com/questions/47475862/wsock32-dll-htons-function
+
+  cPort = THIS.num2word(BitAnd(htons(8728), 0xffff))
   nHost = inet_addr(THIS.IP)
   cHost = THIS.num2dword(nHost)
   cBuffer = THIS.num2word(AF_INET) + cPort + cHost + Repli(Chr(0),8)
