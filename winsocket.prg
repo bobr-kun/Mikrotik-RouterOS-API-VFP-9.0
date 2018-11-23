@@ -70,7 +70,7 @@ FUNCTION Connect
 *	found here: 
 *	https://stackoverflow.com/questions/47475862/wsock32-dll-htons-function
 
-  cPort = THIS.num2word(BitAnd(htons(8728), 0xffff))
+  cPort = THIS.num2word(BitAnd(htons(this.Port), 0xffff))
   nHost = inet_addr(THIS.IP)
   cHost = THIS.num2dword(nHost)
   cBuffer = THIS.num2word(AF_INET) + cPort + cHost + Repli(Chr(0),8)
